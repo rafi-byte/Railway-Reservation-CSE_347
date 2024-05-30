@@ -21,6 +21,7 @@ $result = $conn->query($sql);
             <th>Destination</th>
             <th>Booking Date</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
         <?php while ($booking = $result->fetch_assoc()): ?>
             <tr>
@@ -29,6 +30,14 @@ $result = $conn->query($sql);
                 <td><?php echo $booking['destination']; ?></td>
                 <td><?php echo $booking['booking_date']; ?></td>
                 <td><?php echo $booking['status']; ?></td>
+                <td>
+                    <?php if ($booking['status'] == 'booked'): ?>
+                        <form action="cancel-booking.php" method="POST">
+                            <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
+                            <button type="submit">Cancel</button>
+                        </form>
+                    <?php endif; ?>
+                </td>
             </tr>
         <?php endwhile; ?>
     </table>
