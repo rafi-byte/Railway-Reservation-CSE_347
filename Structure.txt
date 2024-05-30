@@ -1,0 +1,22 @@
+railway-reservation-system/
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── includes/
+│   ├── db.php
+│   ├── functions.php
+│   ├── header.php
+│   └── footer.php
+├── index.php
+├── login.php
+├── register.php
+├── logout.php
+├── book-ticket.php
+├── booked-tickets.php
+├── train-schedule.php
+├── profile.php
+├── cancel-booking.php
+├── review.php
+└── db/
+    └── railway.sql
